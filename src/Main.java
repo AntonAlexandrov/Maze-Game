@@ -6,8 +6,8 @@ public class Main {
     public static void main(String args[]) throws IOException {
         Scanner input = new Scanner(System.in);
         Level level = new Level();
-//      PrintGameLogo startSc = new PrintGameLogo();
-//      startSc.printLogo();
+        PrintGameLogo startSc = new PrintGameLogo();
+        startSc.printLogo();
         Message message = new Message();
         int playerX = 1, playerY = 2;
 
