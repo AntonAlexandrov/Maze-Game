@@ -4,7 +4,8 @@ import java.io.IOException;
 
 public class Level {
 
-
+	int levelSize = 4;
+	
     Character[][] level = new Character[8][];
     int counter = 0;
     public  void createMaze() throws IOException {
@@ -31,13 +32,13 @@ public class Level {
 //            {'#', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
 //            {'#', '#', '#', '#', '#', '#', '#', '#'},};
 
-
-    public void printBoard(){
-        for(int i = 0; i < 8; i++){
-            for(int j = 0; j < 8; j++){
-                System.out.print(level[i][j]);
-            }
-            System.out.println();
-        }
-    }
+    
+    public void printBoard(int playerX, int playerY){
+		for(int i = (playerY/levelSize)*levelSize; i < (playerY/levelSize)*levelSize + levelSize; i++){
+			for(int j = (playerX/levelSize)*levelSize; j < (playerX/levelSize)*levelSize + levelSize; j++){
+				System.out.print(level[i][j]);
+			}
+			System.out.println();
+		}
+	}
 }
