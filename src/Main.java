@@ -22,6 +22,7 @@ public class Main {
         String menuInput;
         String gameInput;
         int moves = 0;
+        int score = 0;
         
         //the menu loop
         while(true){
@@ -37,7 +38,7 @@ public class Main {
 		    		
 		            //printing stuff on screen
 		            message.printMessage();
-		            message.printHUD(moves, playerX, playerY);
+		            message.printHUD(moves, score, playerX, playerY);
 		            level.printBoard(playerX, playerY);
 
 		            //wait for input and move after that
@@ -46,13 +47,19 @@ public class Main {
 		            switch(gameInput){
 		                case "a":{
 		                    if(level.level[playerY][playerX-1] != '#'){
+		                    	if(level.level[playerY][playerX-1] == '$'){
+		                    		score += 5;
+		                    	}
 		                        playerX--;
 		                        level.level[playerY][playerX+1] = ' ';
 		                        moves++;
-		                    }
+		                    }		              
 		                } break;
 		                case "d":{
 		                    if(level.level[playerY][playerX+1] != '#'){
+		                    	if(level.level[playerY][playerX+1] == '$'){
+		                    		score += 5;
+		                    	}
 		                        playerX++;
 		                        level.level[playerY][playerX-1] = ' ';
 		                        moves++;
@@ -60,6 +67,9 @@ public class Main {
 		                }break;
 		                case "w":{
 		                    if(level.level[playerY-1][playerX] != '#'){
+		                    	if(level.level[playerY-1][playerX] == '$'){
+		                    		score += 5;
+		                    	}
 		                        playerY--;
 		                        level.level[playerY+1][playerX] = ' ';
 		                        moves++;
@@ -67,6 +77,9 @@ public class Main {
 		                }break;
 		                case "s":{
 		                    if(level.level[playerY+1][playerX] != '#'){
+		                    	if(level.level[playerY+1][playerX] == '$'){
+		                    		score += 5;
+		                    	}
 		                        playerY++;
 		                        level.level[playerY-1][playerX] = ' ';
 		                        moves++;
