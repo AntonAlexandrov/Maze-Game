@@ -23,7 +23,7 @@ public class Main {
             //printing stuff on screen
             message.printMessage();
             message.printMoves(moves);
-            level.printBoard();
+            level.printBoard(playerX, playerY);
 
             //wait for input and move after that
             userInput = input.next();
