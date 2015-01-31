@@ -37,7 +37,7 @@ public class Main {
 		    		
 		            //printing stuff on screen
 		            message.printMessage();
-		            message.printMoves(moves);
+		            message.printHUD(moves, playerX, playerY);
 		            level.printBoard(playerX, playerY);
 
 		            //wait for input and move after that
@@ -80,8 +80,8 @@ public class Main {
 		            }
 
 		            //try to clear the screen
-		            for(int i = 0; i < 10; i++) {
-		                System.out.println("\n");
+		            for(int i = 0; i < 1; i++) {
+		                System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		            }		
 		        }
 	        }

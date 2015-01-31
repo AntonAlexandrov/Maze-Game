@@ -7,7 +7,9 @@ public class Message {
         System.out.println("Hello, this is an example maze!");
     }
 
-    public void printMoves(int moves){
+    public void printHUD(int moves, int pX, int pY){
         System.out.println("Your moves: " + moves);
+        System.out.print("X: " + pX + ' ');
+        System.out.println("Y: " + pY);
     }
 }
