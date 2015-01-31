@@ -4,10 +4,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class Level {
-
-	int levelSize = 4;
 	
-    Character[][] level = new Character[25][];
+    Character[][] level = new Character[32][];
     int counter = 0;
     public  void createMaze() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("TextFiles/maze-2.txt"));
@@ -26,11 +24,11 @@ public class Level {
 
     
     public void printBoard(int playerX, int playerY){
-        for (Character[] characters : level) {
-            for (int i = 0; i < characters.length; i++) {
-                System.out.print(characters[i]);
-            }
-            System.out.println();
-        }
+    	for(int i = (playerY/16)*16; i < (playerY/16)*16 + 16; i++){
+    		for(int j = (playerX/54)*54; j < (playerX/54)*54 + 54; j++){
+        		System.out.print(level[i][j]);
+        	}
+    		System.out.println();
+    	}
     }
 }
