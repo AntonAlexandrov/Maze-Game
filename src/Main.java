@@ -18,7 +18,7 @@ public class Main {
         level.createMaze();
         int screToBeDone = level.count * 5;
 
-        int playerX = 1, playerY = 2;
+        int playerX = 1, playerY = 1;
         boolean play = false;
 
         String menuInput;
@@ -94,7 +94,7 @@ public class Main {
                         case "exit": {
                             level.level[playerY][playerX] = ' ';
                             playerX = 1;
-                            playerY = 2;
+                            playerY = 1;
                             play = false;
                         }
                         break;
@@ -103,6 +103,11 @@ public class Main {
                     	System.out.print("\n\n\n\n");
                     	System.out.println("CONGRATULATIONS");
                     	System.out.print("\n\n\n\n");
+                    	level.restartMaze();
+                    	playerX = 1;
+                    	playerY = 1;
+                    	moves = 0;
+                    	score = 0;
                         break;                     
                     }
                     //try to clear the screen

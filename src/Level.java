@@ -7,7 +7,7 @@ public class Level {
 
     Character[][] level = new Character[32][];
     int counter = 0;
-    public int count = 0;
+    int count = 0;
     public void createMaze() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("TextFiles/maze-2.txt"));
         String line;
@@ -37,5 +37,12 @@ public class Level {
             }
             System.out.println();
         }
+    }
+    
+    public void restartMaze() throws IOException {
+    	level = new Character[32][];
+        counter = 0;
+        count = 0;
+        createMaze();
     }
 }
