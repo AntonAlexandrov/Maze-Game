@@ -9,10 +9,10 @@ public class Level {
     int counter = 0;
     int count = 0;
     public void createMaze() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("TextFiles/maze-2.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("TextFiles/maze_new_01.txt"));
         String line;
         //Read file and get content into string
-        Readerr readerr = new Readerr("TextFiles/maze-2.txt");
+        Readerr readerr = new Readerr("TextFiles/maze_new_01.txt");
         String fileContent = readerr.readFromFile();
         //Find how many $ have in it
         count = fileContent.length() - fileContent.replace("$", "").length();
