@@ -37,6 +37,7 @@ public class Main {
                 	
                 	if (score == screToBeDone || level.level[playerY][playerX] == 'O') {
                     	message.printEnd();
+                    	message.printHUD(moves, score);
                     	level.restartMaze();
                     	level.level[playerY][playerX] = ' ';
                     	playerX = 1;
@@ -53,7 +54,7 @@ public class Main {
                     level.level[playerY][playerX] = 'P';
 
                     //printing stuff on screen
-                    message.printHUD(moves, score, playerX, playerY);
+                    message.printHUD(moves, score);
                     level.printBoard(playerX, playerY);
 
                     //wait for input and move after that
