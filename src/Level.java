@@ -40,7 +40,7 @@ public class Level {
     }
     
     public void restartMaze() throws IOException {
-    	level = new Character[32][];
+    	level = new Character[32][108];
         counter = 0;
         count = 0;
         createMaze();

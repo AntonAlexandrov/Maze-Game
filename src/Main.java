@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public void playGame() {
-
-    }
+    
 
     public static void main(String args[]) throws IOException {
         Scanner input = new Scanner(System.in);
@@ -36,6 +34,22 @@ public class Main {
 
                 //the game loop
                 while (play) {
+                	
+                	if (score == screToBeDone || level.level[playerY][playerX] == 'O') {
+                    	message.printEnd();
+                    	level.restartMaze();
+                    	level.level[playerY][playerX] = ' ';
+                    	playerX = 1;
+                    	playerY = 1;
+                    	moves = 0;
+                    	score = 0;
+                        break;                     
+                    }
+                    //try to clear the screen
+                    for (int i = 0; i < 1; i++) {
+                        System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                    }
+                	
                     level.level[playerY][playerX] = 'P';
 
                     //printing stuff on screen
@@ -96,19 +110,7 @@ public class Main {
                             play = false;
                         }
 					}
-                    if (score == screToBeDone) {
-                    	message.printEnd();
-                    	level.restartMaze();
-                    	playerX = 1;
-                    	playerY = 1;
-                    	moves = 0;
-                    	score = 0;
-                        break;                     
-                    }
-                    //try to clear the screen
-                    for (int i = 0; i < 1; i++) {
-                        System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                    }       
+                           
                 }
             }
 
@@ -122,8 +124,7 @@ public class Main {
                 System.exit(0);
             }
 
-        }
+        }       
 
     }
-
 }
