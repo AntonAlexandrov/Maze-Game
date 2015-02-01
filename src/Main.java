@@ -39,7 +39,6 @@ public class Main {
                     level.level[playerY][playerX] = 'P';
 
                     //printing stuff on screen
-                    message.printMessage();
                     message.printHUD(moves, score, playerX, playerY);
                     level.printBoard(playerX, playerY);
 
@@ -100,9 +99,7 @@ public class Main {
                         break;
                     }
                     if (score == screToBeDone) {
-                    	System.out.print("\n\n\n\n");
-                    	System.out.println("CONGRATULATIONS");
-                    	System.out.print("\n\n\n\n");
+                    	message.printEnd();
                     	level.restartMaze();
                     	playerX = 1;
                     	playerY = 1;

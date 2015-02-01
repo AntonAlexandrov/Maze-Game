@@ -24,7 +24,6 @@ public class Menu {
 		System.out.println("4.Exit");
 	}
 	public void printInstructions() throws IOException{
-		System.out.println("*SomeInstructions*");
 		 BufferedReader br = new BufferedReader(new FileReader("TextFiles/instructions.txt"));
 	        String line;
 

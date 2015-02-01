@@ -3,8 +3,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Message {
-    public void printMessage(){
-        System.out.println("Hello, this is an example maze!");
+    public void printEnd(){
+    	System.out.print("\n\n\n\n");
+    	System.out.println("CONGRATULATIONS");
+    	System.out.print("\n\n\n\n");
     }
 
     public void printHUD(int moves,int score, int pX, int pY){
