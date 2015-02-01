@@ -23,13 +23,30 @@ public class Menu {
 		System.out.println("3.Authors");
 		System.out.println("4.Exit");
 	}
-	public void printInstructions(){
+	public void printInstructions() throws IOException{
 		System.out.println("*SomeInstructions*");
-		System.out.print("\n\n\n");
+		 BufferedReader br = new BufferedReader(new FileReader("TextFiles/instructions.txt"));
+	        String line;
+
+	        while ((line = br.readLine()) != null) {
+
+	            System.out.println(line);
+
+	        }
+	        br.close();
+	   System.out.print("\n\n\n");
 	}
 	public void printAbout() throws IOException{
 		printLogo();
-		System.out.println("About the authors");
+		BufferedReader br = new BufferedReader(new FileReader("TextFiles/Authors.txt"));
+        String line;
+
+        while ((line = br.readLine()) != null) {
+
+            System.out.println(line);
+
+        }
+        br.close();
 		System.out.print("\n\n\n");
 	}
 }
