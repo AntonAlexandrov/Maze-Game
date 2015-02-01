@@ -78,6 +78,10 @@ public class Main {
 		                case "s":{
 		                    if(level.level[playerY+1][playerX] != '#'){
 		                    	if(level.level[playerY+1][playerX] == '$'){
+//		                    		if(level.level[playerY+1][playerX] == 'o'){
+//		                    			System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+//		                    			System.out.println("Congrats! You escaped from the maze.");
+//		                    		}
 		                    		score += 5;
 		                    	}
 		                        playerY++;
