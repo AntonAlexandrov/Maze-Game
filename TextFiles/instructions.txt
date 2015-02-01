@@ -1,0 +1,7 @@
+This is a maze game. Your purpose is to reach the exit as fast as you can.
+
+Use the "W", "S", "A" and "D" keys to navigate forwards, backwards, left and right.
+
+You can collect some cash ($) on your way out and raise your score.
+
+Good luck!
