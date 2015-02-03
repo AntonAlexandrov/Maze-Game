@@ -44,7 +44,7 @@ public class Main {
                         int hours = (int) (diff/3600);
                         int minutes = (int)(diff%3600)/60;
                         int second = (int) (diff%60);
-                        message.printEnd();
+                        message.printEnd(moves, score);
                         System.out.printf("You have passed the maze for %02dh : %02dm : %02ds\n",hours,minutes,second);
                     	message.printHUD(moves, score);
                     	level.restartMaze();
@@ -131,6 +131,7 @@ public class Main {
                 menu.printAbout();
             }
             if (menuInput.equals("4")) {
+            	input.close();
                 System.exit(0);
             }
 
