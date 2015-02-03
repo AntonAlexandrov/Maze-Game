@@ -1,5 +1,6 @@
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class Main {
@@ -32,11 +33,19 @@ public class Main {
             if (menuInput.equals("1")) {
                 play = true;
 
+                Calendar start = Calendar.getInstance();
                 //the game loop
+
                 while (play) {
                 	
                 	if (score == screToBeDone || level.level[playerY][playerX] == 'O') {
-                    	message.printEnd();
+                        Calendar end = Calendar.getInstance();
+                        long diff = (end.getTimeInMillis()-start.getTimeInMillis())/1000;
+                        int hours = (int) (diff/3600);
+                        int minutes = (int)(diff%3600)/60;
+                        int second = (int) (diff%60);
+                        message.printEnd();
+                        System.out.printf("You have passed the maze for %02dh : %02dm : %02ds\n",hours,minutes,second);
                     	message.printHUD(moves, score);
                     	level.restartMaze();
                     	level.level[playerY][playerX] = ' ';
