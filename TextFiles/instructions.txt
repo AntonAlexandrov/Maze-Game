@@ -4,4 +4,6 @@ Use the "W", "S", "A" and "D" keys to navigate up, down, left and right.
 
 You can collect some cash ($) on your way out and raise your score.
 
+Each run is timed, try to do better next time!
+
 Good luck!
