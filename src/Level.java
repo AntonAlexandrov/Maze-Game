@@ -5,8 +5,8 @@ import java.io.IOException;
 public class Level {
 
 	Character[][] level = new Character[32][];
-	int counter = 0;
-	int count = 0;
+	int counter = 0; //used in reading the maze from .txt file
+	int count = 0; //counts the dollars
 
 	public void createMaze() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(
@@ -31,7 +31,7 @@ public class Level {
 
 	}
 
-	public void printBoard(int playerX, int playerY) {
+	public void printBoard(int playerX, int playerY) { //Maze is 32 x 108
 		for (int i = (playerY / 16) * 16; i < (playerY / 16) * 16 + 16; i++) {
 			for (int j = (playerX / 54) * 54; j < (playerX / 54) * 54 + 54; j++) {
 				System.out.print(level[i][j]);

@@ -29,13 +29,12 @@ public class Main {
 			if (menuInput.equals("1")) {
 				play = true;
 
-				Calendar start = Calendar.getInstance();
+				Calendar start = Calendar.getInstance(); //get the local time
 				// the game loop
 
 				while (play) {
 
-					if (score == scoreToBeDone
-							|| level.level[playerY][playerX] == 'O') {
+					if (score == scoreToBeDone || level.level[playerY][playerX] == 'O') {
 						Calendar end = Calendar.getInstance();
 						long diff = (end.getTimeInMillis() - start
 								.getTimeInMillis()) / 1000;
@@ -65,9 +64,7 @@ public class Main {
 						break;
 					}
 					// clearing the screen
-					for (int i = 0; i < 1; i++) {
-						System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-					}
+					System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 					level.level[playerY][playerX] = 'P';
 
@@ -81,7 +78,6 @@ public class Main {
 					// (for example sadd, sswdswss, sawds)
 					char[] currentInput = gameInput.toCharArray();
 					for (int i = 0; i < currentInput.length; i++) {
-
 						if (currentInput[i] == 'a') {
 							if (level.level[playerY][playerX - 1] != '#') {
 								if (level.level[playerY][playerX - 1] == '$') {
@@ -123,10 +119,13 @@ public class Main {
 							}
 						}
 						if (currentInput[i] == 'x') {
+							play = false;
+							level.restartMaze();
 							level.level[playerY][playerX] = ' ';
 							playerX = 1;
 							playerY = 1;
-							play = false;
+							moves = 0;
+							score = 0;
 						}
 					}
 
